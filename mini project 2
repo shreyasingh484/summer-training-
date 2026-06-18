@@ -1,0 +1,27 @@
+def analyze_results():
+    marks = []
+    print("Enter marks for 5 subjects (out of 100):")
+    for i in range(1, 6):
+        score = float(input(f"Subject {i}: "))
+        marks.append(score)
+    total_marks = sum(marks)
+    percentage = total_marks / 5
+    is_failed = any(score < 33 for score in marks)
+
+    if is_failed:
+        final_result = "Fail"
+        grade = "F"
+    else:
+        final_result = "Pass"
+        if percentage >= 90: grade = "A+"
+        elif percentage >= 80: grade = "A"
+        elif percentage >= 70: grade = "B"
+        elif percentage >= 60: grade = "C"
+        elif percentage >= 50: grade = "D"
+        else: grade = "E"
+    print("\nAnalysis:")
+    print("Total Marks:", total_marks, "/ 500")
+    print("Percentage:", percentage, "%")
+    print("Grade:", grade)
+    print("Final Result:", final_result)
+analyze_results()
