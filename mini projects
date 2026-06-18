@@ -1,0 +1,7 @@
+import random
+n=random.randint(1, 10)
+g=int(input("guess the number"))
+if g==n:
+    print("you won")
+else:
+    print("you lost")
