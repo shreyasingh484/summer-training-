@@ -1,0 +1,73 @@
+class VehicleRentalSystem:
+
+    @staticmethod
+    def bike():
+        bd = int(input("Enter bike distance travelled: "))
+        day = int(input("Enter number of days: "))
+        base_amount = 2000
+        free_km = 250
+        rate = 5
+        if bd <= free_km:
+            amount = base_amount * day
+        else:
+            extra = (bd - free_km) * rate
+            amount = (base_amount * day) + extra
+
+        return amount
+
+    @staticmethod
+    def car():
+        cd = int(input("Enter car distance travelled: "))
+        day = int(input("Enter number of days: "))
+        base_amount = 5000
+        free_km = 250
+        rate = 10
+        if cd <= free_km:
+            amount = base_amount * day
+        else:
+            extra = (cd - free_km) * rate
+            amount = (base_amount * day) + extra
+
+        return amount
+
+    @staticmethod
+    def bus():
+        busd = int(input("Enter bus distance travelled: "))
+        day = int(input("Enter number of days: "))
+        
+        base_amount = 7500
+        free_km = 250
+        rate = 20
+
+        if busd <= free_km:
+            amount = base_amount * day
+        else:
+            extra = (busd - free_km) * rate
+            amount = (base_amount * day) + extra
+
+        return amount
+
+print("Select Vehicle Type:")
+print("1. Bike")
+print("2. Car")
+print("3. Bus")
+
+choice = input("Enter your choice (1/2/3): ")
+
+if choice == "1":
+    amount = VehicleRentalSystem.bike()
+    print("Bike Amount =", amount)
+
+elif choice == "2":
+    amount = VehicleRentalSystem.car()
+    print("Car Amount =", amount)
+
+elif choice == "3":
+    amount = VehicleRentalSystem.bus()
+    print("Bus Amount =", amount)
+
+else:
+    print("Invalid choice!")
+    amount = 0
+
+print("\nTotal Amount to Pay =", amount)
