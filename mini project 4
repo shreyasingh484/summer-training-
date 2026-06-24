@@ -1,0 +1,19 @@
+current_balance = 1000 
+
+def check_balance():
+    print("Current balance:", current_balance) 
+
+def deposit(amt):
+    global current_balance
+    current_balance += amt
+    print("Deposited:", amt) 
+
+def withdraw(amt):
+    global current_balance
+    current_balance -= amt
+    print("Withdrew:", amt)
+
+check_balance()
+deposit(1000)
+withdraw(200)
+print("Final balance:", current_balance)
