@@ -1,0 +1,23 @@
+class billsystem:
+
+  @staticmethod
+  def calculate_bill():
+    devices=3
+    rate_per_unit=8
+    total_units=0
+    for i in range(1,devices+1):
+      device_name=input("Enter device name: ")
+      watts=float(input("Enter watts: "))
+      hours=float(input("Enter hours: "))
+      days=int(input("Enter days: "))
+      units=(watts*hours*days)/1000
+      total_units+=units
+      avg=total_units/devices
+
+      print(units)
+      print(total_units)
+    total_bill=total_units*rate_per_unit
+    print(total_bill)
+    print(rate_per_unit)
+
+billsystem.calculate_bill()
