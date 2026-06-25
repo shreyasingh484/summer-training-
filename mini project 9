@@ -1,0 +1,16 @@
+para = input("Enter paragraph: ")
+words = para.split()
+print("Total words:", len(words))
+if words:
+    max_length = len(max(words, key=len))
+    print("Maximum word length:", max_length)
+    print("Longest word(s):")
+    for word in words:
+        if len(word) == max_length:
+            print(word)
+vowels = "aeiouAEIOU"
+vowel_count = 0
+for char in para:
+    if char in vowels:
+        vowel_count += 1
+print("Total vowels:", vowel_count)
