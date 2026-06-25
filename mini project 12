@@ -1,0 +1,31 @@
+expenses = []
+
+while True:
+    print("1. Add Expense")
+    print("2. View Expenses")
+    print("3. Show Total Expense")
+    print("4. Exit")
+
+    choice = input("enter your choice ")
+
+    if choice == "1":
+        item = input("enter expense name ")
+        amount = float(input("enter amount "))
+        expenses.append((item, amount))
+        print("expense added ")
+    elif choice == "2":
+        if not expenses:
+            print("No expenses ")
+        else:
+            print("expenses:")
+            for item, amount in expenses:
+                print(item - amount)
+    elif choice == "3":
+        total = sum(amount for item, amount in expenses)
+        print(total)
+    elif choice == "4":
+        print("exit")
+        break
+
+    else:
+        print("invalid choice.")
